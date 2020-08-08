@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NoticeDetails">
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:text="Young Phoenix Public School"-->
+<!--        android:textSize="22dp"-->
+<!--        android:textColor="#5858FA"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        />-->
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Bhubaneshwar,Odissa"-->
+<!--        android:textColor="#5858FA"-->
+<!--        android:textSize="20dp"-->
+<!--        android:layout_gravity="center_horizontal"/>-->
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/yungpplogo44"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Subject_detail"
+        android:text="Subject"
+        android:textColor="@android:color/holo_red_light"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textSize="27sp"
+        android:layout_marginTop="35dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/Notice_detail"
+        android:layout_marginStart="13dp"
+        android:text="Notice details"
+        android:textColor="#080C86"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"/>
+
+
+
+
+</LinearLayout>

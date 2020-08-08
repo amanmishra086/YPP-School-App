@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="my.awesome.yppschoolapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".PaymentReceipt"></activity>
+        <activity android:name=".HomeTask" />
+        <activity android:name=".cca_result" />
+        <activity android:name=".PayPendingFee" />
+        <activity android:name=".exam_result" />
+        <activity android:name=".ClassTask" />
+        <activity
+            android:name=".PaymentTab"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".AddFees" />
+        <activity android:name=".NoticeDetails" />
+        <activity android:name=".NoticeList" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity android:name=".TransactionHistory" />
+        <activity android:name="com.atom.mpsdklibrary.PayActivity" />
+        <activity android:name=".PaymentActivity" />
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".DisplayAttendance" />
+        <activity
+            android:name=".StudentProfile"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".ParentPortal" />
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".MainActivity" />
+    </application>
+
+</manifest>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".cca_result">
+
+
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_marginTop="12dp">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Class"-->
+<!--            android:textSize="17sp"-->
+<!--            android:id="@+id/feb"-->
+<!--            android:layout_marginLeft="16dp"-->
+<!--            android:textColor="@android:color/black"/>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="CCA-Name"-->
+<!--            android:textSize="17sp"-->
+<!--            android:id="@+id/fee"-->
+<!--            android:layout_marginLeft="22dp"-->
+<!--            android:textColor="@android:color/black"/>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="position"-->
+<!--            android:textSize="17sp"-->
+<!--            android:id="@+id/fine"-->
+<!--            android:layout_marginLeft="22dp"-->
+<!--            android:textColor="@android:color/black"/>-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Date"-->
+<!--            android:textSize="17sp"-->
+<!--            android:id="@+id/status"-->
+<!--            android:layout_marginLeft="39dp"-->
+<!--            android:textColor="@android:color/black"/>-->
+
+<!--    </LinearLayout>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="12dp">
+
+        <TextView
+            android:id="@+id/Class"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:textSize="15sp"
+            android:layout_marginLeft="8dp"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:text="Class" />
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:text="CCA-Name"
+            android:id="@+id/Name"
+            android:layout_marginLeft="5dp"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:text="Position"
+            android:id="@+id/Position"
+            android:layout_marginLeft="25dp"
+            android:textColor="@android:color/black"/>
+        <TextView
+            android:layout_width="1dp"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:id="@+id/date"
+            android:layout_marginLeft="0dp"
+            android:textColor="@android:color/black"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/grey" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+
+        />
+
+</LinearLayout>

@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">YPP School App</string>
+    <string name="make_an_order">Tution Fee</string>
+    <string name="dialog_title">Monthly Fee:-Rs1280</string>
+    <string name="ok_label">OK</string>
+    <string name="dismiss_label">Dismiss</string>
+    <string name="clear_all_label">Clear all</string>
+    <string name="transfee">Total Transport Fee to be collected:- </string>
+
+    <string-array name="shopping_item">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/cnst"
+    android:background="@drawable/bg"
+    android:layout_height="match_parent"
+    tools:context="my.awesome.yppschoolapp.LoginActivity">
+
+<!--<ScrollView-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--   android:id="@+id/scrollView"-->
+<!--    android:background="@drawable/bg"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context="my.awesome.yppschoolapp.LoginActivity">-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+
+<!--        android:layout_width="match_parent"-->
+<!--        android:id="@+id/cnst"-->
+
+<!--        android:layout_height="match_parent"-->
+<!--        >-->
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="130dp"
+            android:background="@drawable/shapeemail"
+            android:drawableLeft="@drawable/ic_person"
+            android:drawablePadding="10dp"
+            android:hint="Student Id"
+            android:text="5"
+            android:textColorLink="#080C86"
+            android:id="@+id/email"
+            android:padding="15dp"
+            android:textColor="@color/gray"
+            android:textColorHighlight="@color/gray"
+            android:textColorHint="@color/gray" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="13dp"
+             app:hintEnabled="false"
+
+
+           >
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shapeemail"
+                android:drawablePadding="10dp"
+                android:hint="password"
+                android:text="ypp12345"
+                android:padding="15dp"
+                android:textColorLink="#080C86"
+                android:drawableStart="@drawable/ic_lock"
+                android:textColor="@color/gray"
+                android:textColorHint="@color/gray"
+                android:textColorHighlight="@color/gray"
+                android:inputType="textPassword"
+                android:id="@+id/password"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+<!--                <EditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:layout_marginEnd="15dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:padding="15dp"-->
+<!--            android:background="@drawable/shapeemail"-->
+<!--            android:drawableLeft="@drawable/ic_lock"-->
+<!--            android:drawablePadding="10dp"-->
+<!--            android:inputType="textPassword"-->
+<!--            android:text="ypp12345"-->
+<!--            android:hint="Password"-->
+<!--            android:textColorLink="#080C86"-->
+<!--            android:id="@+id/password"-->
+<!--            android:textColor="@color/gray"-->
+<!--            android:textColorHint="@color/gray"-->
+<!--            android:textColorHighlight="@color/gray">-->
+
+
+
+<!--        </EditText>-->
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Log In"
+            android:textColor="@android:color/white"
+            android:clickable="true"
+            android:id="@+id/login"
+            android:onClick="loginclick"
+            android:shadowColor="@android:color/transparent"
+            android:padding="15dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginTop="40dp"
+            android:background="#080C86"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        app:srcCompat="@drawable/yungpplogo44" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--</ScrollView>-->
