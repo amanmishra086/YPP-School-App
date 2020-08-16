@@ -133,12 +133,12 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-               // Toast.makeText(LoginActivity.this, httpResponseMsg, Toast.LENGTH_SHORT).show();
+               Toast.makeText(LoginActivity.this, httpResponseMsg, Toast.LENGTH_SHORT).show();
 
 
-               if(httpResponseMsg.substring(0,9).equalsIgnoreCase("{\"result\"")) {
+              // if(httpResponseMsg.substring(0,9).equalsIgnoreCase("{\"result\"")) {
                // if(httpResponseMsg.equalsIgnoreCase("Data Matched")){
-
+                if(httpResponseMsg.contains("result")){
                     try {
                         JSONObject jsonObject = new JSONObject(httpResponseMsg);
 
@@ -148,14 +148,7 @@ public class LoginActivity extends AppCompatActivity {
                             myEdit.putString("json", jsonObject.toString());
                            // myEdit.putString("json", httpResponseMsg);
                             myEdit.apply();
-//                            Intent i2 =new Intent(LoginActivity.this,ParentPortal.class);
-//
-//                        i2.putExtra("json", httpResponseMsg);
-//
-//                        startActivity(i2);
 
-
-//                        }
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -168,7 +161,7 @@ public class LoginActivity extends AppCompatActivity {
                    // Toast.makeText(LoginActivity.this, "else part", Toast.LENGTH_SHORT).show();
 
                    progressDialog.dismiss();
-                    Toast.makeText(LoginActivity.this,httpResponseMsg,Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this,"Unable to connect to server !!!",Toast.LENGTH_LONG).show();
                 }
 
             }
@@ -193,117 +186,6 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-
-
-//    private void takeScreenShot() {
-//
-//        File folder = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Signature/");
-//
-//        if (!folder.exists()) {
-//            boolean success = folder.mkdir();
-//        }
-//
-//        path = folder.getAbsolutePath();
-//        path = path + "/" + signature_pdf_ + System.currentTimeMillis() + ".pdf";// path where pdf will be stored
-//
-//        View u = findViewById(R.id.scroll);
-//        NestedScrollView z = (NestedScrollView) findViewById(R.id.scroll); // parent view
-//        totalHeight = z.getChildAt(0).getHeight();// parent view height
-//        totalWidth = z.getChildAt(0).getWidth();// parent view width
-//
-//        //Save bitmap to  below path
-//        String extr = Environment.getExternalStorageDirectory() + "/Signature/";
-//        File file = new File(extr);
-//        if (!file.exists())
-//            file.mkdir();
-//        String fileName = signature_img_ + ".jpg";
-//        myPath = new File(extr, fileName);
-//        imagesUri = myPath.getPath();
-//        FileOutputStream fos = null;
-//        b = getBitmapFromView(u, totalHeight, totalWidth);
-//
-//        try {
-//            fos = new FileOutputStream(myPath);
-//            b.compress(Bitmap.CompressFormat.PNG, 100, fos);
-//            fos.flush();
-//            fos.close();
-//
-//        } catch (Exception e) {
-//            // TODO Auto-generated catch block
-//            e.printStackTrace();
-//        }
-//        createPdf();// create pdf after creating bitmap and saving
-//
-//    }
-
-//    public void convertCertViewToImage(View view) throws IOException {
-//
-//        cnst.setDrawingCacheEnabled(true);
-//        cnst.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
-//                View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
-//        cnst.layout(0, 0, cnst.getMeasuredWidth(), cnst.getMeasuredHeight());
-//        cnst.buildDrawingCache();
-//        Bitmap bm = Bitmap.createBitmap(cnst.getDrawingCache());
-//        cnst.setDrawingCacheEnabled(false); // clear drawing cache
-//        Intent share = new Intent(Intent.ACTION_SEND);
-//        share.setType("image/jpg");
-//
-//        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-//        bm.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-//
-//        File f = new File(getExternalFilesDir(null).getAbsolutePath() + File.separator + "Certificate" + File.separator + "myCertificate.jpg");
-//
-//        try {
-//            f.createNewFile();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        FileOutputStream fo = new FileOutputStream(f);
-//        fo.write(bytes.toByteArray());
-//
-//    }
-
-//    public void layoutToImage(View view) {
-//        // get view group using reference
-//        linear = (LinearLayout) view.findViewById(R.id.linearLayout);
-//        // convert view group to bitmap
-//        linear.setDrawingCacheEnabled(true);
-//        linear.buildDrawingCache();
-//        Bitmap bm = linear.getDrawingCache();
-//        Intent share = new Intent(Intent.ACTION_SEND);
-//        share.setType("image/jpeg");
-//        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-//        bm.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-//
-//        File f = new File(Environment.getExternalStorageState() + File.separator + "image.jpg");
-//        try {
-//            f.createNewFile();
-//            FileOutputStream fo = new FileOutputStream(f);
-//            fo.write(bytes.toByteArray());
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//    }
-
-//    public void imageToPDF() throws FileNotFoundException {
-//        try {
-//            Document document = new Document();
-//            dirpath = android.os.Environment.getExternalStorageDirectory().toString();
-//            PdfWriter.getInstance(document, new FileOutputStream(dirpath + "/NewPDF.pdf")); //  Change pdf's name.
-//            document.open();
-//            Image img = Image.getInstance(Environment.getExternalStorageDirectory() + File.separator + "image.jpg");
-//            float scaler = ((document.getPageSize().getWidth() - document.leftMargin()
-//                    - document.rightMargin() - 0) / img.getWidth()) * 100;
-//            img.scalePercent(scaler);
-//            img.setAlignment(Image.ALIGN_CENTER | Image.ALIGN_TOP);
-//            document.add(img);
-//            document.close();
-//            Toast.makeText(this, "PDF Generated successfully!..", Toast.LENGTH_SHORT).show();
-//        } catch (Exception e) {
-//
-//        }
-//    }
 
 }
 

@@ -93,7 +93,7 @@ public class PaymentReceipt extends AppCompatActivity {
 
 
 
-        Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
 
 
 //        webView.loadDataWithBaseURL(null,html4,"text/html","utf-8",null);

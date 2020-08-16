@@ -7,8 +7,8 @@ android {
         applicationId "my.awesome.yppschoolapp"
         minSdkVersion 22
         targetSdkVersion 29
-        versionCode 15
-        versionName "2.5"
+        versionCode 17
+        versionName "2.7"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
