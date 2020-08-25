@@ -26,13 +26,16 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
     }
     @Override
     protected String doInBackground(String... params) {
-        String type = params[0];
-        String login_url = "http://yppschool.com/conn.php";
+       // String type = params[0];
+        String type="login";
+        String login_url = "http://yppschool.com/login.php";
         if(type.equals("login")) {
             try {
+               // String user_name = params[1];
                 String user_name = params[1];
+               // String password = params[2];
                 String password = params[2];
-                String x = params[3];
+               // String x = params[3];
                 URL url = new URL(login_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
@@ -40,7 +43,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
                 httpURLConnection.setDoInput(true);
                 OutputStream outputStream = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-                String post_data = URLEncoder.encode("user_name","UTF-8")+"="+URLEncoder.encode(user_name,"UTF-8")+"&"
+                String post_data = URLEncoder.encode("email","UTF-8")+"="+URLEncoder.encode(user_name,"UTF-8")+"&"
                         +URLEncoder.encode("password","UTF-8")+"="+URLEncoder.encode(password,"UTF-8");
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();

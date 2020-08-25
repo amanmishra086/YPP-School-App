@@ -1,5 +1,7 @@
 package my.awesome.yppschoolapp;
 
+
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
@@ -35,6 +37,7 @@ public class HttpParse {
 
             httpURLConnection.setRequestMethod("POST");
 
+
             httpURLConnection.setDoInput(true);
 
             httpURLConnection.setDoOutput(true);
@@ -46,6 +49,7 @@ public class HttpParse {
                     new OutputStreamWriter(outputStream, "UTF-8"));
 
             bufferedWriter.write(FinalDataParse(Data));
+
 
             bufferedWriter.flush();
 
@@ -90,4 +94,5 @@ public class HttpParse {
 
         return Result ;
     }
+
 }

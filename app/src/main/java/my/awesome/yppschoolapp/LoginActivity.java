@@ -20,6 +20,7 @@ import android.print.PrintDocumentAdapter;
 import android.print.PrintJob;
 import android.print.PrintManager;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
@@ -34,12 +35,32 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Document;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Reader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+import javax.net.ssl.HttpsURLConnection;
+
+//import okhttp3.MediaType;
+//import okhttp3.OkHttpClient;
+//import okhttp3.Request;
+//import okhttp3.RequestBody;
+//import okhttp3.Response;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -61,6 +82,7 @@ public class LoginActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     HashMap<String,String> hashMap = new HashMap<>();
     HttpParse httpParse = new HttpParse();
+    JsonHttpParse jsonHttpParse = new JsonHttpParse();
   //  public static final String UserEmail = "";
 
     @Override
@@ -78,9 +100,13 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-
     }
+
+
+
         public void loginclick(View view) {
+
+
 
            // startActivity(new Intent(LoginActivity.this,ParentPortal.class));
                 CheckEditTextIsEmptyOrNot();
@@ -102,8 +128,8 @@ public class LoginActivity extends AppCompatActivity {
 
     public void CheckEditTextIsEmptyOrNot(){
 
-        EmailHolder = Email.getText().toString();
-        PasswordHolder = Password.getText().toString();
+        EmailHolder = Email.getText().toString().trim();
+        PasswordHolder = Password.getText().toString().trim();
 
         if(TextUtils.isEmpty(EmailHolder) || TextUtils.isEmpty(PasswordHolder))
         {
@@ -137,43 +163,45 @@ public class LoginActivity extends AppCompatActivity {
 
 
               // if(httpResponseMsg.substring(0,9).equalsIgnoreCase("{\"result\"")) {
-               // if(httpResponseMsg.equalsIgnoreCase("Data Matched")){
-                if(httpResponseMsg.contains("result")){
-                    try {
-                        JSONObject jsonObject = new JSONObject(httpResponseMsg);
 
-                        SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
-
-                            SharedPreferences.Editor myEdit = sharedPreferences.edit();
-                            myEdit.putString("json", jsonObject.toString());
-                           // myEdit.putString("json", httpResponseMsg);
-                            myEdit.apply();
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                   progressDialog.dismiss();
-                    finish();
-                   startActivity(new Intent(LoginActivity.this,ParentPortal.class));
-                }
-                else{
-
-                   // Toast.makeText(LoginActivity.this, "else part", Toast.LENGTH_SHORT).show();
-
-                   progressDialog.dismiss();
-                    Toast.makeText(LoginActivity.this,"Unable to connect to server !!!",Toast.LENGTH_LONG).show();
-                }
+//                if(httpResponseMsg.contains("result")){
+//                    try {
+//                        JSONObject jsonObject = new JSONObject(httpResponseMsg);
+//
+//                        SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+//
+//                            SharedPreferences.Editor myEdit = sharedPreferences.edit();
+//                            myEdit.putString("json", jsonObject.toString());
+//                           // myEdit.putString("json", httpResponseMsg);
+//                            myEdit.apply();
+//
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                    }
+//                   progressDialog.dismiss();
+//                    finish();
+//                   startActivity(new Intent(LoginActivity.this,ParentPortal.class));
+//                }
+//                else{
+//
+//                   // Toast.makeText(LoginActivity.this, "else part", Toast.LENGTH_SHORT).show();
+//
+//                   progressDialog.dismiss();
+//                    Toast.makeText(LoginActivity.this,"Unable to connect to server !!!",Toast.LENGTH_LONG).show();
+//                }
 
             }
 
             @Override
             protected String doInBackground(String... params) {
 
-                hashMap.put("email",params[0]);
-
-                hashMap.put("password",params[1]);
-
-                finalResult = httpParse.postRequest(hashMap, HttpURL);
+//                hashMap.put("email",params[0]);
+//
+//                hashMap.put("password",params[1]);
+                //String jsonInputString="{\"email\":\""+email+"\",\"password\":\""+password+"\"}";
+                String jsonInputString="&email="+email+"&password="+password;
+               // finalResult = httpParse.postRequest(hashMap, HttpURL);
+                finalResult = jsonHttpParse.postRequest(jsonInputString, HttpURL);
 
                 return finalResult;
             }
