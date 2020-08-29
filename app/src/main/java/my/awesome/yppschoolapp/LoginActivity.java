@@ -159,49 +159,50 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-               Toast.makeText(LoginActivity.this, httpResponseMsg, Toast.LENGTH_SHORT).show();
+              // Toast.makeText(LoginActivity.this, httpResponseMsg, Toast.LENGTH_SHORT).show();
 
 
               // if(httpResponseMsg.substring(0,9).equalsIgnoreCase("{\"result\"")) {
 
-//                if(httpResponseMsg.contains("result")){
-//                    try {
-//                        JSONObject jsonObject = new JSONObject(httpResponseMsg);
-//
-//                        SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
-//
-//                            SharedPreferences.Editor myEdit = sharedPreferences.edit();
-//                            myEdit.putString("json", jsonObject.toString());
-//                           // myEdit.putString("json", httpResponseMsg);
-//                            myEdit.apply();
-//
-//                    } catch (JSONException e) {
-//                        e.printStackTrace();
-//                    }
-//                   progressDialog.dismiss();
-//                    finish();
-//                   startActivity(new Intent(LoginActivity.this,ParentPortal.class));
-//                }
-//                else{
-//
-//                   // Toast.makeText(LoginActivity.this, "else part", Toast.LENGTH_SHORT).show();
-//
-//                   progressDialog.dismiss();
-//                    Toast.makeText(LoginActivity.this,"Unable to connect to server !!!",Toast.LENGTH_LONG).show();
-//                }
+                if(httpResponseMsg.contains("result")){
+                    try {
+                        JSONObject jsonObject = new JSONObject(httpResponseMsg);
+
+                        SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+
+                            SharedPreferences.Editor myEdit = sharedPreferences.edit();
+                            myEdit.putString("json", jsonObject.toString());
+                           // myEdit.putString("json", httpResponseMsg);
+                            myEdit.apply();
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                   progressDialog.dismiss();
+                    finish();
+                   startActivity(new Intent(LoginActivity.this,ParentPortal.class));
+                }
+                else{
+
+                   // Toast.makeText(LoginActivity.this, "else part", Toast.LENGTH_SHORT).show();
+
+                   progressDialog.dismiss();
+                    Toast.makeText(LoginActivity.this, httpResponseMsg, Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(LoginActivity.this,"Unable to connect to server !!!",Toast.LENGTH_LONG).show();
+                }
 
             }
 
             @Override
             protected String doInBackground(String... params) {
 
-//                hashMap.put("email",params[0]);
-//
-//                hashMap.put("password",params[1]);
+                hashMap.put("email",params[0]);
+
+                hashMap.put("password",params[1]);
                 //String jsonInputString="{\"email\":\""+email+"\",\"password\":\""+password+"\"}";
-                String jsonInputString="&email="+email+"&password="+password;
-               // finalResult = httpParse.postRequest(hashMap, HttpURL);
-                finalResult = jsonHttpParse.postRequest(jsonInputString, HttpURL);
+                //String jsonInputString="&email="+email+"&password="+password;
+                finalResult = httpParse.postRequest(hashMap, HttpURL);
+                //finalResult = jsonHttpParse.postRequest(jsonInputString, HttpURL);
 
                 return finalResult;
             }

@@ -71,6 +71,7 @@ public class cca_result extends AppCompatActivity {
 
         SharedPreferences sh = getSharedPreferences("MySharedPref", MODE_PRIVATE);
         String json=sh.getString("json","");
+        //id=sh.getString("id","");
         try {
             JSONObject jsonObj1 = new JSONObject(json);
             JSONArray array = jsonObj1.getJSONArray("result");

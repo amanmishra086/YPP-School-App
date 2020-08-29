@@ -7,8 +7,8 @@ android {
         applicationId "my.awesome.yppschoolapp"
         minSdkVersion 22
         targetSdkVersion 29
-        versionCode 17
-        versionName "2.7"
+        versionCode 18
+        versionName "2.8"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -23,7 +23,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.0.0'
-    //implementation 'com.squareup.okhttp3:okhttp:3.9.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.9.1'
 
     //implementation 'com.androidx.appcompat:design:1.1.0'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
@@ -37,4 +37,10 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation project(path: ':mpsdklibrary-release')
+
+
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.4.0'
+
 }

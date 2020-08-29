@@ -172,6 +172,8 @@ public class TransportFragment extends Fragment {
 
         SharedPreferences sh = getActivity().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
         String json=sh.getString("json","");
+//        id=sh.getString("id","");
+//        Class_name=sh.getString("class_name","");
         try {
             JSONObject jsonObj1 = new JSONObject(json);
             JSONArray array = jsonObj1.getJSONArray("result");

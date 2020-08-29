@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
+        android:text="5"
         android:id="@+id/etUserName"
         android:layout_alignParentTop="true"
         android:layout_marginTop="47dp" />
@@ -22,6 +23,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
+        android:text="ypp12345"
         android:id="@+id/etPassword"
         android:layout_below="@+id/etUserName"
         android:layout_alignParentLeft="true"

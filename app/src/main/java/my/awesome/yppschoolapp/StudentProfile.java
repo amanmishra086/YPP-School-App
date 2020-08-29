@@ -62,6 +62,22 @@ public class StudentProfile extends AppCompatActivity {
 
         SharedPreferences sh = getSharedPreferences("MySharedPref", MODE_PRIVATE);
         String json=sh.getString("json","");
+
+//               strname=sh.getString("name","");
+//                strlast=sh.getString("lastname","");
+//                strfather=sh.getString("fathersname","");
+//                strmother=sh.getString("mothername","");
+//                strpresentadd=sh.getString("presentaddress","");
+//                strpermanentadd=sh.getString("permanentaddress","");
+//                strphone=sh.getString("phone","");
+//                strdate=sh.getString("dob","");
+//                stremail=sh.getString("email","");
+//                strgender=sh.getString("gender","");
+//                strClassname=sh.getString("class_name","");
+//                strAadhar=sh.getString("aadhar","");
+//                strSession=sh.getString("session","");
+
+
         try {
             JSONObject jsonObj = new JSONObject(json);
             JSONArray array = jsonObj.getJSONArray("result");

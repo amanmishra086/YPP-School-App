@@ -68,6 +68,12 @@ public class TransactionHistory extends AppCompatActivity {
     public void getData() {
         SharedPreferences sh = getSharedPreferences("MySharedPref", MODE_PRIVATE);
         String json=sh.getString("json","");
+
+//        id=sh.getString("id","");
+//        stu_name=sh.getString("name","");
+//        stu_class=sh.getString("class_name","");
+//        stu_session=sh.getString("session","");
+
         try {
             JSONObject jsonObj1 = new JSONObject(json);
             JSONArray array = jsonObj1.getJSONArray("result");

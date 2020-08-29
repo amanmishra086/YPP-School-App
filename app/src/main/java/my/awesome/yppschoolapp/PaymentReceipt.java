@@ -33,7 +33,7 @@ import java.util.List;
 public class PaymentReceipt extends AppCompatActivity {
 
     private WebView webView;
-    //private DatabaseReference databaseReference;
+
     private String name,cnic,status,class1;
 
     String html4="";
@@ -164,7 +164,7 @@ public class PaymentReceipt extends AppCompatActivity {
        // Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
          // html4=html4.concat(str);
         html4="<table width=\"100%\" style=\"font-size: 9px;\" border=\"0\" cellspacing=\"0\" cellpadding=\"1\">  <tr>   " +
-                " <td width=\"50%\">      <img src=\"'.base_url().'assets/img/phoenix.png\" alt=\"Young Phoenix\" width=\"250\">    </td>   " +
+                " <td width=\"50%\">      <img src=\"http://yppschool.com/img/logo1.png\" alt=\"Young Phoenix\" width=\"250\">    </td>   " +
                 " <td width=\"10%\"></td>    <td width=\"40%\">Payment Receipt<hr/><b>Receipt # "+ReceiptNo+"</b><br>" +
                 "<b>Receipt Date : </b> '. " +
                 ""+Receiptdate+"<br><b>Receipt By : </b>'.$usr[0]['firstname'].' '.$usr[0]['lastname'].'</td>  </tr></table>" +
