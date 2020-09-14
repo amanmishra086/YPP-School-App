@@ -1,9 +1,11 @@
 package my.awesome.yppschoolapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -48,13 +50,22 @@ public class cca_result_adapter extends RecyclerView.Adapter<cca_result_adapter.
     @Override
     public void onBindViewHolder(@NonNull cca_result_adapter.MyViewHolder holder, int position) {
 
-        cca_result_class fm=arrayList.get(position);
+        final cca_result_class fm=arrayList.get(position);
         holder.class_name.setText(fm.getClass_name());
         //holder.cca_name.setText(fm.getCca_name());
         holder.cca_pos.setText(fm.getCca_pos());
         holder.date.setText(fm.getDate());
 
         getcca_name(fm.getCca_name(),holder);
+
+        holder.linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(mcontext,cca_certificate.class);
+                intent.putExtra("certificate_id",fm.getCertificate_id());
+                mcontext.startActivity(intent);
+            }
+        });
 
        // holder.cca_name.setText(cca_name2);
 
@@ -155,6 +166,7 @@ public class cca_result_adapter extends RecyclerView.Adapter<cca_result_adapter.
         TextView class_name,cca_name,cca_pos,date;
         // CheckBox month;
 
+        LinearLayout linearLayout;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -164,7 +176,7 @@ public class cca_result_adapter extends RecyclerView.Adapter<cca_result_adapter.
             cca_pos=itemView.findViewById(R.id.Position);
             date=itemView.findViewById(R.id.date);
 
-
+            linearLayout=itemView.findViewById(R.id.cca_linearlayout);
 
         }
     }

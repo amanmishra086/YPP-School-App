@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".exam_result_items">
+
+
+
+    <WebView
+        android:layout_width="match_parent"
+        android:id="@+id/webview"
+        android:layout_height="0dp"
+        android:layout_weight="6">
+
+    </WebView>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="25dp"
+        android:text=" Download Result Sheet "
+        android:textColor="@android:color/white"
+        android:background="@android:color/holo_blue_bright"
+        android:onClick="CreatePdf"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

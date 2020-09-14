@@ -27,7 +27,7 @@ public class exam_result extends AppCompatActivity {
     String DATA_URL = "http://yppschool.com/examResult.php?id=";
 
     String JSON_ARRAY = "result";
-    String id;
+    String id,stu_name,stu_class,stu_session,stu_father,stu_dob;
 
     List<exam_result_Class > arrayList;
     Exam_result_adapter exam_result_adapter;
@@ -68,6 +68,7 @@ public class exam_result extends AppCompatActivity {
             for (int i = 0; i < array.length(); i++) {
                 JSONObject ob1 = array.getJSONObject(i);
                 id=ob1.getString("id");
+                stu_name=ob1.getString("name");
 
                 //Toast.makeText(StudentProfile.this, ob.getString("name"), Toast.LENGTH_SHORT).show();
 
@@ -113,7 +114,10 @@ public class exam_result extends AppCompatActivity {
 
                 // Toast.makeText(FirstActivity.this, ob.getString("name"), Toast.LENGTH_SHORT).show();
                 exam_result_Class history=new exam_result_Class(ob.getString("exam_term")
-                        ,ob.getString("grade"),ob.getString("teacher_remarks"),ob.getString("class_id"));
+                        ,ob.getString("grade"),ob.getString("teacher_remarks"),ob.getString("class_id")
+                        ,ob.getString("session_id"),ob.getString("dob"),ob.getString("parent_name"),ob.getString("promoted_next")
+                ,ob.getString("exam_date"),ob.getString("work_education_grade"),ob.getString("art_education_grade"),
+                        ob.getString("health_education_grade"),ob.getString("discipline_grade"),stu_name,ob.getString("exam_result_id"));
 
                 arrayList.add(history);
             }

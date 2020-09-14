@@ -62,6 +62,7 @@ public class ClassTask extends AppCompatActivity {
     public void getData() {
         SharedPreferences sh = getSharedPreferences("MySharedPref", MODE_PRIVATE);
         String json=sh.getString("json","");
+
         try {
             JSONObject jsonObj1 = new JSONObject(json);
             JSONArray array = jsonObj1.getJSONArray("result");

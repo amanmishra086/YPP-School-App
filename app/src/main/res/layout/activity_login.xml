@@ -54,7 +54,7 @@
             android:drawableLeft="@drawable/ic_person"
             android:drawablePadding="10dp"
             android:hint="Student Id"
-android:text="5"
+
             android:textColorLink="#080C86"
             android:id="@+id/email"
             android:padding="15dp"
@@ -80,7 +80,7 @@ android:text="5"
                 android:background="@drawable/shapeemail"
                 android:drawablePadding="10dp"
                 android:hint="password"
-android:text="ypp12345"
+
                 android:padding="15dp"
                 android:textColorLink="#080C86"
                 android:drawableStart="@drawable/ic_lock"

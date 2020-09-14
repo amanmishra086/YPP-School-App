@@ -155,7 +155,7 @@ public class cca_result extends AppCompatActivity {
                // getcca_name(ob.getString("cca_id"));
 
                 // Toast.makeText(FirstActivity.this, ob.getString("name"), Toast.LENGTH_SHORT).show();
-               cca_result_class cca=new cca_result_class(student_class,ob.getString("cca_id"),student_pos,ddd);
+               cca_result_class cca=new cca_result_class(student_class,ob.getString("cca_id"),student_pos,ddd,ob.getString("id"));
 
 
 
